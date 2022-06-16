@@ -1,0 +1,8 @@
+{
+  "name": "app-brief",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "5dd433d2"
+}
