@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app-brief-80a6d": {
+      "hosting": {
+        "app": [
+          "app-brief-80a6d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app-brief-80a6d"
+  }
+}
