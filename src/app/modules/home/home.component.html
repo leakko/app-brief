@@ -3,7 +3,10 @@
     <ion-icon name="home"></ion-icon>
     <ion-buttons slot="end">
       <ng-container *ngIf="authService.isLoggedIn; else logIn">
-        <ion-icon name="log-out-outline" (click)="authService.SignOut()"></ion-icon>
+        <ion-icon
+          name="log-out-outline"
+          (click)="authService.SignOut()"
+        ></ion-icon>
       </ng-container>
       <ng-template #logIn>
         <ion-icon [routerLink]="['/login']" name="person-circle"></ion-icon>
@@ -15,8 +18,20 @@
 <ion-content class="ion-padding">
   <main class="center-in-page">
     <h1>Get WooCommerce's Information</h1>
-    <section>
-
+    <section class="center-in-page center-content">
+      <form [formGroup]="WCForm" (ngSubmit)="onSubmit($event)">
+        <ion-item>
+          <ion-label class="label">API Key</ion-label>
+          <ion-input type="text" formControlName="apiKey"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="label">Url</ion-label>
+          <ion-input type="text" formControlName="url"></ion-input>
+        </ion-item>
+        <p class="center-content">
+          <ion-button type="submit" class="button">Submit</ion-button>
+        </p>
+      </form>
     </section>
   </main>
 </ion-content>
