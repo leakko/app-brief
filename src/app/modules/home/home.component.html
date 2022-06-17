@@ -49,7 +49,7 @@
         </ion-item>
       </div>
       <ng-container *ngIf="errorGettingProducts; else table">
-        <p>There was an error fetching your products data</p>
+        <p class="error"><ion-icon name="warning"></ion-icon>There was an error getting your products data <br> Check the provided info</p>
       </ng-container>
       <ng-template #table>
         <table>
