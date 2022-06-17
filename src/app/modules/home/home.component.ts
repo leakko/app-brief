@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
   WCForm: FormGroup = new FormGroup({
     apiKey: new FormControl(''),
+    apiSecret: new FormControl(''),
     url: new FormControl('')
   })
 
@@ -17,6 +18,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit(e) {}
+  onSubmit(e) {
+    e.preventDefault();
+    
+  }
 
 }

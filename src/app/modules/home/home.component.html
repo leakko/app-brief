@@ -17,7 +17,7 @@
 
 <ion-content class="ion-padding">
   <main class="center-in-page">
-    <h1>Get WooCommerce's Information</h1>
+    <h1>WooCommerce's Credential and Source</h1>
     <section class="center-in-page center-content">
       <form [formGroup]="WCForm" (ngSubmit)="onSubmit($event)">
         <ion-item>
@@ -25,13 +25,20 @@
           <ion-input type="text" formControlName="apiKey"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-label class="label">API Secret</ion-label>
+          <ion-input type="text" formControlName="apiSecret"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label class="label">Url</ion-label>
           <ion-input type="text" formControlName="url"></ion-input>
         </ion-item>
         <p class="center-content">
-          <ion-button type="submit" class="button">Submit</ion-button>
+          <ion-button type="submit" class="button">Update table</ion-button>
         </p>
       </form>
+    </section>
+    <section class="center-in-page center-content">
+      <h1>WooCommerce's Information</h1>
     </section>
   </main>
 </ion-content>
