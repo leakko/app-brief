@@ -5,3 +5,20 @@ h1 {
 section {
     margin-bottom: 25px;
 }
+
+table {
+    margin-top: 25px;
+
+    td, th {
+        text-align: left;
+        padding: 10px 15px;
+    }
+
+    td {
+        vertical-align: top;
+    }
+
+    th {
+        vertical-align: middle;
+    }
+}

@@ -10,9 +10,9 @@ import { WcApiService } from 'src/app/services/wc/wc-api.service';
 })
 export class HomeComponent implements OnInit {
   WCForm: FormGroup = new FormGroup({
-    apiKey: new FormControl(''),
-    apiSecret: new FormControl(''),
-    url: new FormControl(''),
+    apiKey: new FormControl('ck_9a00efd5a41665b9f6672cd9c49b1d06ed056020'),
+    apiSecret: new FormControl('cs_118856955e2e9913f717267eba02a70ecc3b4d56'),
+    url: new FormControl('https://marcos.betademo.es/wp-json/wc/v3'),
   });
   products: any;
   errorGettingProducts: boolean = false;

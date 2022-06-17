@@ -17,7 +17,7 @@
 
 <ion-content class="ion-padding">
   <main class="center-in-page">
-    <h1>WooCommerce's Credential and Source</h1>
+    <h1>Enter your WooCommerce's Data</h1>
     <section class="center-in-page center-content">
       <form [formGroup]="WCForm" (ngSubmit)="onSubmit($event)">
         <ion-item>
@@ -37,8 +37,32 @@
         </p>
       </form>
     </section>
+    <hr>
     <section class="center-in-page center-content">
-      <h1>WooCommerce's Information</h1>
+      <h1>Your WooCommerce's Products</h1>
+      <ng-container *ngIf="errorGettingProducts; else table">
+        <p>There was an error fetching your products data</p>
+      </ng-container>
+      <ng-template #table>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Sku</th>
+            <th>Stock Status</th>
+            <th>Price</th>
+            <th>Categories</th>
+          </tr>
+          <ng-container *ngFor="let product of products">
+            <tr>
+              <td>{{product.name}}</td>
+              <td>{{product.sku}}</td>
+              <td>{{product.stock_status}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.categories[0].name}}</td>
+            </tr>
+          </ng-container>
+        </table>
+      </ng-template>
     </section>
   </main>
 </ion-content>
