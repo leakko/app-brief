@@ -11,8 +11,8 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';;
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';;
     AngularFirestoreModule,
     AngularFireAuthModule,
     FirebaseAppModule,
+    HttpClientModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -32,7 +33,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';;
     AngularFireModule,
     AngularFireAuthModule,
     FirebaseAppModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
