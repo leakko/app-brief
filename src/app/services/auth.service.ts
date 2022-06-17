@@ -36,6 +36,7 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
+        localStorage.setItem('user', JSON.stringify(result.user))
         this.ngZone.run(() => {
           this.router.navigate(['home']);
         });
@@ -81,7 +82,7 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
-    return user !== null && user.emailVerified !== false ? true : false;
+    return user !== null ? true : false;
   }
   // Sign in with Google
   GoogleAuth() {
