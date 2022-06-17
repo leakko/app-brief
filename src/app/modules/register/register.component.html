@@ -6,18 +6,14 @@
 
 <ion-content class="ion-padding">
   <h1>Register</h1>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
     <ion-item>
-      <ion-label>Username</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Name</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Password</ion-label>
-      <ion-input type="password" formControlName="description"></ion-input>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <ion-button type="submit" class="buton">Submit</ion-button>
   </form>
