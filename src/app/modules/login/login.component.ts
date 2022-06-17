@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,10 @@ import { AuthService } from '../shared/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  loginForm: FormGroup = new FormGroup({
+    user: new FormControl(''),
+    password: new FormControl('')
+  })
 
   constructor() { }
 
