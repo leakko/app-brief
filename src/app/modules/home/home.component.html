@@ -2,7 +2,12 @@
   <ion-toolbar>
     <ion-icon name="home"></ion-icon>
     <ion-buttons slot="end">
-      <ion-icon [routerLink]="['/login']" name="person-circle"></ion-icon>
+      <ng-container *ngIf="authService.isLoggedIn; else logIn">
+        <ion-icon name="log-out-outline" (click)="authService.SignOut()"></ion-icon>
+      </ng-container>
+      <ng-template #logIn>
+        <ion-icon [routerLink]="['/login']" name="person-circle"></ion-icon>
+      </ng-template>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
