@@ -1,21 +1,27 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="center-in-page">
     <ion-icon name="home" [routerLink]="['/home']"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Login</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="email" formControlName="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Password</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
-    </ion-item>
-    <ion-button type="submit" class="buton">Submit</ion-button>
-  </form>
-  <p>Don't you have an account? <a [routerLink]="['/register']">Sign up!</a></p>
+  <main class="center-in-page center-content">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+      <ion-item>
+        <ion-label class="label">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="label">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p class="center-content">
+        <ion-button type="submit" class="button">Submit</ion-button>
+      </p>
+    </form>
+    <p>
+      Don't you have an account? <a [routerLink]="['/register']">Sign up!</a>
+    </p>
+  </main>
 </ion-content>
