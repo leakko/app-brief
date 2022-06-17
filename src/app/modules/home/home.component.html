@@ -40,6 +40,14 @@
     <hr>
     <section class="center-in-page center-content">
       <h1>Your WooCommerce's Products</h1>
+      <div>
+        <ion-item>
+          <ion-label class="label">Name</ion-label>
+          <ion-input [formControl]="search" placeholder="T-shirt" type="text"></ion-input>
+          <ion-button type="button" class="button" (click)="onSearch()">Search</ion-button>
+          <ion-button type="button" class="button" color="secondary" (click)="onReset()">Reset</ion-button>
+        </ion-item>
+      </div>
       <ng-container *ngIf="errorGettingProducts; else table">
         <p>There was an error fetching your products data</p>
       </ng-container>

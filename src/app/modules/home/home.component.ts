@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   });
   products: any;
   errorGettingProducts: boolean = false;
+  search = new FormControl('');
+  originalProducts: any;
 
   constructor(
     public authService: AuthService,
@@ -30,11 +32,28 @@ export class HomeComponent implements OnInit {
     .toPromise()
     .then(products => {
       this.products = products;
+      this.originalProducts = this.products;
       this.errorGettingProducts = false;
-      console.log(this.products);
     })
     .catch(error => {
       this.errorGettingProducts = true;
     })
   }
+
+  onSearch() {
+    if(this.products) {
+      if(this.search.value.length > 0) {
+        this.products = this.products.filter(product => {
+          return product.name.toUpperCase().includes(this.search.value.toUpperCase());
+        })
+      } else {
+        this.products = this.originalProducts;
+      }
+    }
+  }
+
+  onReset() {
+    this.products = this.originalProducts;
+  }
 }
+
