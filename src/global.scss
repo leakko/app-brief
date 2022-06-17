@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+*[name="person-circle"], *[name="home"] {
+    font-size: 2rem;
+    margin: 0 25px;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}

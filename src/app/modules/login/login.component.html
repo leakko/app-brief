@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-icon name="home" [routerLink]="['/home']"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Login page</h1>
+  <h1>Login</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="buton">Submit</ion-button>
+  </form>
+  <p>Don't you have an account? <a [routerLink]="['/register']">Sign up!</a></p>
 </ion-content>

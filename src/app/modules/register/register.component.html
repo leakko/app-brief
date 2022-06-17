@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Register</ion-title>
+    <ion-icon name="home" [routerLink]="['/home']"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Register page</h1>
+  <h1>Register</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="buton">Submit</ion-button>
+  </form>
+  <p>Do you already have an account? <a [routerLink]="['/login']">Login!</a></p>
 </ion-content>
