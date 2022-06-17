@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
 
   onReset() {
     this.products = this.originalProducts;
+    this.search.reset();
   }
 }
 
