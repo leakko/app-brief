@@ -57,5 +57,9 @@ export class HomeComponent implements OnInit {
     this.products = this.originalProducts;
     this.search.reset();
   }
+
+  pageChanged(e) {
+    this.pages = e;
+  }
 }
 

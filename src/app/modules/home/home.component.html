@@ -97,6 +97,7 @@
         <div class="pagination-control-container">
           <pagination-controls
             (pageChange)="pages = $event"
+            (pageBoundsCorrection)="pageChanged($event)"
           ></pagination-controls>
         </div>
       </div>
