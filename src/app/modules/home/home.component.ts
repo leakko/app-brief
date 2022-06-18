@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   errorGettingProducts: boolean = false;
   search = new FormControl('');
   originalProducts: any;
+  page: number;
 
   constructor(
     public authService: AuthService,

@@ -25,7 +25,7 @@ import { SharedModule } from './modules/shared/shared.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FirebaseAppModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

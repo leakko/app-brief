@@ -51,7 +51,7 @@
         <p class="error"><ion-icon name="warning"></ion-icon>There was an error getting your products data <br> Check the provided info</p>
       </ng-container>
       <ng-template #table>
-        <div class="products-list center-in-page">
+        <div class="products-list center-in-page table-container">
         <table>
           <tr>
             <th>Name</th>
@@ -60,7 +60,7 @@
             <th>Price</th>
             <th>Categories</th>
           </tr>
-          <ng-container *ngFor="let product of products">
+          <ng-container *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: pages }">
             <tr>
               <td>{{product.name}}</td>
               <td>{{product.sku}}</td>
@@ -72,6 +72,9 @@
         </table>
       </div>
       </ng-template>
+      <div class="pagination-control-container">
+        <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+      </div>
     </section>
   </main>
 </ion-content>
