@@ -37,43 +37,68 @@
         </p>
       </form>
     </section>
-    <hr>
+    <hr />
     <section>
       <h1>Your WooCommerce's Products</h1>
       <div class="search-form">
         <ion-item>
-          <ion-input [formControl]="search" placeholder="Name search" type="text"></ion-input>
-          <ion-button type="button" class="button" (click)="onSearch()">Search</ion-button>
-          <ion-button type="button" class="button" color="secondary" (click)="onReset()">Reset</ion-button>
+          <ion-input
+            [formControl]="search"
+            placeholder="Name search"
+            type="text"
+          ></ion-input>
+          <ion-button type="button" class="button" (click)="onSearch()"
+            >Search</ion-button
+          >
+          <ion-button
+            type="button"
+            class="button"
+            color="secondary"
+            (click)="onReset()"
+            >Reset</ion-button
+          >
         </ion-item>
       </div>
-      <ng-container *ngIf="errorGettingProducts; else table">
-        <p class="error"><ion-icon name="warning"></ion-icon>There was an error getting your products data <br> Check the provided info</p>
-      </ng-container>
-      <ng-template #table>
-        <div class="products-list center-in-page table-container">
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Sku</th>
-            <th>Stock Status</th>
-            <th>Price</th>
-            <th>Categories</th>
-          </tr>
-          <ng-container *ngFor="let product of products | paginate: { itemsPerPage: 8, currentPage: pages }">
-            <tr>
-              <td>{{product.name}}</td>
-              <td>{{product.sku}}</td>
-              <td>{{product.stock_status}}</td>
-              <td>{{product.price}}</td>
-              <td>{{product.categories[0].name}}</td>
-            </tr>
-          </ng-container>
-        </table>
-      </div>
-      </ng-template>
-      <div class="pagination-control-container">
-        <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+      <div *ngIf="products && products.length > 0">
+        <ng-container *ngIf="errorGettingProducts; else table">
+          <p class="error">
+            <ion-icon name="warning"></ion-icon>There was an error getting your
+            products data <br />
+            Check the provided info
+          </p>
+        </ng-container>
+        <ng-template #table>
+          <div class="products-list center-in-page table-container">
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Sku</th>
+                <th>Stock Status</th>
+                <th>Price</th>
+                <th>Categories</th>
+              </tr>
+              <ng-container
+                *ngFor="
+                  let product of products
+                    | paginate: { itemsPerPage: 8, currentPage: pages }
+                "
+              >
+                <tr>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.sku }}</td>
+                  <td>{{ product.stock_status }}</td>
+                  <td>{{ product.price }}</td>
+                  <td>{{ product.categories[0].name }}</td>
+                </tr>
+              </ng-container>
+            </table>
+          </div>
+        </ng-template>
+        <div class="pagination-control-container">
+          <pagination-controls
+            (pageChange)="pages = $event"
+          ></pagination-controls>
+        </div>
       </div>
     </section>
   </main>

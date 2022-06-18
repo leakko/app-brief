@@ -7,6 +7,7 @@ section {
 }
 
 table {
+    margin: 0 auto;
     margin-top: 25px;
 
     td, th {
@@ -53,17 +54,7 @@ table {
     margin: 0 auto;
 }
 
-.table-container {
-    position: relative;
-    left: 25px;
-}
-
 .pagination-control-container {
     display: flex;
     justify-content: center;
-}
-
-.pagination-control-container > * {
-    position: relative;
-    right: 25px;
 }
